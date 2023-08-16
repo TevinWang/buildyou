@@ -18,7 +18,7 @@ export default function Home() {
     };
 
     // Make a POST request using the fetch function
-    fetch("https://2bc8-76-244-43-219.ngrok-free.app/api/python", {
+    fetch("https://8a83-104-56-112-228.ngrok-free.app/api/python", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
