@@ -8,10 +8,10 @@ import { useState } from "react";
 
 export default function Home() {
   const { data: session } = useSession()
-  const [image, setImage] = useState();
+  const [image, setImage] = useState<Blob>();
   const [prompt, setPrompt] = useState("");
 
-  const promptSubmit = (e) => {
+  const promptSubmit = (e: any) => {
     // Create the JSON payload with the 'prompt' property
     const data = {
       prompt: prompt
@@ -26,9 +26,7 @@ export default function Home() {
       body: JSON.stringify(data)
     })
       .then(response => response.blob())
-      .then(blob => {
-        setImage(blob);
-      })
+      .then(blob => setImage(blob))
       .catch(error => {
         // Handle any errors that occur during the request
         console.error("Error:", error);
